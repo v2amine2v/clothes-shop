@@ -1,0 +1,16 @@
+header img{
+	width:50px;
+	height:50px;
+}  
+header {
+	display: flex;
+	align-items: center;
+	padding: 0.2em;
+	background-color: #f0f0f0;
+	height: 75px;
+}
+header nav {
+	display: flex;
+	gap: 10px;
+	margin-left:auto
+}
