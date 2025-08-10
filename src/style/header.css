@@ -1,17 +1,23 @@
-/* Reset default margins and padding */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-header img{
-	width:50px;
-	height:50px;
+.img{
+	width:55px;
+	height:60px;
+	background-image: url(../assets/best-logo.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-right:2px solid #e7d095;
+	margin-right: 5px;
 }  
 header {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	padding: 0.2em 30px;
 	background-color: #f0f0f0;
 	height: 75px;
@@ -22,21 +28,132 @@ header {
 	margin-left: -50vw;
 	margin-right: -50vw;
 }
+header h1{
+	color:hsl(39, 54%, 34%);
+	text-shadow: 2px 2px 0 #e7d095;
+	font-family: "Caramel", cursive;
+    font-weight: 800;
+    font-style: normal;
+	font-size: 45px;
+	position: relative;
+	top:-5px;
+	margin: 0;
+}
 header nav {
 	display: flex;
 	gap: 10px;
-	margin-left:auto;
+	margin-left: auto;
+}
+header nav a{
+	text-decoration: none;
+	color: hsl(39, 54%, 34%);
+	font-weight: 700;
+	padding: 8px 6px;
+	border-radius: 20px;
+	transition: all 0.3s ease;
+	position: relative;
+	font-size: 20px;
+}
+header nav a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: hsl(39, 54%, 34%);
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
 }
 
-/* Responsive header padding */
+header nav a:hover::after {
+	width: 100%;
+}
+
+.mobile-menu-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 24px;
+	background: none;
+	border: none;
+	color: hsl(39, 54%, 34%);
+}
+
+.mobile-menu-toggle:hover {
+	color: #e7d095;
+}
+
+.mobile-nav {
+	position: absolute;
+	top: 75px;
+	left: 0;
+	right: 0;
+	background-color: #f0f0f0;
+	border-top: 2px solid #e7d095;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-20px);
+	transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.mobile-nav a {
+	display: block;
+	padding: 15px 20px;
+	text-decoration: none;
+	color: hsl(39, 54%, 34%);
+	border-bottom: 1px solid #e7d095;
+	transition: background-color 0.3s;
+}
+
+.mobile-nav a:hover {
+	background-color: #e7d095;
+	color: #f0f0f0;
+}
 @media (max-width: 768px) {
 	header {
 		padding: 0.2em 20px;
+	}
+	
+	header h1 {
+		font-size: 35px;
+	}
+	
+	.img {
+		width: 45px;
+		height: 50px;
+	}
+	header nav {
+		display: none;
+	}
+	
+	.mobile-menu-toggle {
+		display: block;
+	}
+	
+	header {
+		justify-content: space-between;
 	}
 }
 
 @media (max-width: 480px) {
 	header {
 		padding: 0.2em 15px;
+	}
+	
+	header h1 {
+		font-size: 10vw;
+	}
+	
+	.img {
+		width: 40px;
+		height: 45px;
 	}
 }
