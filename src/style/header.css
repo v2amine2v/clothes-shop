@@ -64,6 +64,7 @@ header nav a::after {
 	background-color: hsl(39, 54%, 34%);
 	transition: all 0.3s ease;
 	transform: translateX(-50%);
+	height: 3px;
 }
 
 header nav a:hover::after {
@@ -123,7 +124,7 @@ header nav a:hover::after {
 	}
 	
 	header h1 {
-		font-size: 35px;
+		font-size: 45px;
 	}
 	
 	.img {
