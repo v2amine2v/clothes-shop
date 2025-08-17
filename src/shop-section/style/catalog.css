@@ -19,7 +19,7 @@
 }
 .img-section{
 	background-position: 50% 50%;
-	background-size: cover;
+	background-size:cover;
 	background-repeat: no-repeat;
 	filter: brightness(0.7);
 }
